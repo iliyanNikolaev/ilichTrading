@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НЮ ЙОРК SWEEPS - Matrix Style</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000000;
+            color: #00ff00;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-shadow: 0 0 10px #00ff00;
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto 50px auto;
+            box-shadow: 0 0 20px #00ff00;
+        }
+
+        th, td {
+            border: 1px solid #00ff00;
+            padding: 12px 15px;
+        }
+
+        th {
+            background-color: #003300;
+            color: #00ff00;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        td {
+            background-color: #001100;
+            font-size: 15px;
+        }
+
+        tr:hover td {
+            background-color: #004400;
+        }
+
+        .event {
+            background-color: #001100;
+            border: 2px solid #00ff00;
+            padding: 25px 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #00ff00;
+        }
+
+        .event h2 {
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+            font-size: 28px;
+        }
+
+        .event p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .time {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .sparkle {
+            color: #00ff00;
+            font-weight: bold;
+            animation: flicker 1s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 22%, 24%, 55% { opacity: 0; }
+        }
+    .warning {
+        background-color: #110011;
+        border: 2px solid #00ff00;
+        padding: 20px 25px;
+        max-width: 500px;
+        margin: 30px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #00ff00;
+        text-align: center;
+        animation: glow 2s infinite alternate;
+    }
+
+    .warning h2 {
+        color: #00ff00;
+        font-family: 'Courier New', monospace;
+        text-shadow: 0 0 10px #00ff00;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .warning p {
+        color: #00ff00;
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    @keyframes glow {
+        from { box-shadow: 0 0 10px #00ff00; }
+        to { box-shadow: 0 0 25px #00ff00; }
+    }
+</style>
+    </style>
+</head>
+<body>
+    <h1>НЮ ЙОРК SWEEPS</h1>
+
+    <table border="1" cellspacing="0" cellpadding="8">
+      <thead>
+        <tr>
+          <th>Session</th>
+          <th>Час (BG)</th>
+          <th>Какво ни трябва</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Asia</td>
+          <td>00:00 – 09:00</td>
+          <td>Asia High / Low</td>
+        </tr>
+        <tr>
+          <td>London</td>
+          <td>09:00 – 12:00</td>
+          <td>London High / Low</td>
+        </tr>
+        <tr>
+          <td>New York</td>
+          <td>14:30 – 17:00</td>
+          <td>Trade setup</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="event">
+        <h2>✨ New York за XAU/USD ✨</h2>
+        <p><strong>Време (българско):</strong> <span class="time">14:00 – 14:30</span></p>
+        <p>Тогава започва да влиза <span class="sparkle">американската ликвидност</span>!</p>
+    </div>
+
+    <div class="warning">
+    <h2>⚠️ Hindsight Bias ⚠️</h2>
+    <p>След като събитие се случи, изглежда очевидно.</p>
+    <p>Но преди това не е било толкова ясно.</p>
+</div>
+
+
+</body>
+</html>
