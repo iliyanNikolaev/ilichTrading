@@ -1,4 +1,5 @@
-# ilichTrading
-Learning how to trade gold effectively.
+# ilich trading gold
 
-AI-generated content (99.9%) – hundreds of prompts, hours of chats.
+Интерактивен учебник създаден докато се образовам за основните неща в дей трейдинга на злато.
+
+Контента е генериран 100 процента от AI.
