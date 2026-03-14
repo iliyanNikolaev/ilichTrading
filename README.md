@@ -1,9 +1,9 @@
-**LIVE DEMO:** https://chimerical-cannoli-4d4c9b.netlify.app/
+# LIVE DEMO
+https://chimerical-cannoli-4d4c9b.netlify.app/
 
-
+---
 
 ## 🇧🇬 Български
-
 
 ### Цели на проекта
 
@@ -19,8 +19,6 @@
 ---
 
 ## 🇬🇧 English
-
-**LIVE DEMO:** https://chimerical-cannoli-4d4c9b.netlify.app/
 
 ### Project Goals
 
