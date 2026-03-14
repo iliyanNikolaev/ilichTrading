@@ -1,876 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading XAU/USD</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading XAU/USD</title>
 
-    <style>
-
-body {
-    background-color: #000000;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 40px;
+<style>
+body{
+    background:#000;
+    color:#00ff00;
+    font-family:'Courier New', monospace;
+    margin:0;
+    padding:40px;
+    text-shadow:0 0 3px #00ff00;
 }
-
-/* лек неонов ефект за текста */
-body {
-    text-shadow: 0 0 3px #00ff00;
+a{
+    color:#00ff00;
 }
-
-/* линкове ако има */
-a {
-    color: #00ff00;
+::selection{
+    background:#00ff00;
+    color:#000;
 }
-
-/* селекция на текст */
-::selection {
-    background: #00ff00;
-    color: #000000;
+.cyber-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(transparent 95%, rgba(0,255,0,0.1) 95%);
+    background-size:100% 3px;
+    pointer-events:none;
+    opacity:0.15;
 }
+.top-attention-bar{
+    text-align:center;
+    padding:12px;
+    margin-bottom:40px;
+    border:1px solid #00ff00;
+    background:#001100;
+    box-shadow:0 0 15px #00ff00;
+    font-size:14px;
+    letter-spacing:2px;
+    animation:pulsebar 3s infinite;
+}
+@keyframes pulsebar{
+    0%{box-shadow:0 0 5px #00ff00}
+    50%{box-shadow:0 0 25px #00ff00}
+    100%{box-shadow:0 0 5px #00ff00}
+}
+section{
+    max-width:720px;
+    margin:40px auto;
+    padding:30px;
+    border:2px solid #00ff00;
+    background:#001100;
+    border-radius:12px;
+    box-shadow:0 0 25px #00ff00;
+    animation:glow 2.5s infinite alternate;
+    transition:transform .25s;
+}
+section:hover{transform:scale(1.02);}
+h1,h2{text-align:center;text-shadow:0 0 10px #00ff00;}
+p,li{font-size:16px;line-height:1.6;}
+ul{margin-left:20px;}
+table{width:100%;border-collapse:collapse;margin-top:20px;}
+th,td{border:1px solid #00ff00;padding:12px;}
+th{background:#003300;}
+td{background:#001100;}
+tr:hover td{background:#004400;}
+@keyframes glow{
+    from{box-shadow:0 0 10px #00ff00}
+    to{box-shadow:0 0 30px #00ff00}
+}
+.liquidity-banner{
+    max-width:700px;
+    margin:60px auto;
+    padding:30px;
+    text-align:center;
+    border:2px solid #00ffee;
+    background:#001100;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 0 30px #00ffee;
+}
+.liquidity-banner h2{color:#00ffee;font-size:26px;}
+.liquidity-time{font-size:22px;font-weight:bold;margin-top:10px;display:block;}
+.scanline{
+    position:absolute;
+    top:-100%;
+    left:0;
+    width:100%;
+    height:120%;
+    background:linear-gradient(transparent, rgba(0,255,255,0.25), transparent);
+    animation:scan 4s linear infinite;
+}
+@keyframes scan{
+    0%{top:-100%}
+    100%{top:100%}
+}
+.highlight{color:#00ffee;font-weight:bold;animation:blink 3s infinite;}
+@keyframes blink{0%{opacity:1}50%{opacity:.4}100%{opacity:1}}
 </style>
 </head>
 <body>
 
+<div class="cyber-bg"></div>
 
+<div class="top-attention-bar">
+⚡ TRADING PSYCHOLOGY • MARKET STRUCTURE • XAU/USD • LIQUIDITY ⚡
+</div>
 
-
-<div class="trading-disclaimer-component">
-
+<section>
 <h2>⚠️ Hindsight Bias ⚠️</h2>
-
-<p>
-<strong>Hindsight Bias</strong> е когнитивна изкривеност, при която след като едно събитие се случи,
-започва да изглежда очевидно. Когато гледаш завършена графика,
-лесно е да кажеш <em>„трябваше да купя тук“</em> или <em>„трябваше да продам там“</em>.
-</p>
-
-<p>
-В реално време обаче пазарът е пълен с <strong>шум, несигурност и емоции</strong>.
-Дори стратегии, които работят в дългосрочен план,
-не са лесни за изпълнение без достатъчно опит.
-</p>
-
-<p><strong>Няколко важни принципа:</strong></p>
-
+<p><strong>Hindsight Bias</strong> е когнитивна изкривеност, при която след като едно събитие се случи, започва да изглежда очевидно.</p>
+<p>Когато гледаш завършена графика, лесно е да кажеш <em>„трябваше да купя тук“</em> или <em>„трябваше да продам там“</em>.</p>
+<p>В реално време пазарът е пълен с <strong>шум, несигурност и емоции</strong>.</p>
 <ul>
-<li>Не се доверявайте безусловно на никого.</li>
-<li>Telegram групи и сигнали могат да се използват само за <strong>потвърждение на вашия собствен анализ</strong>.</li>
-<li>Не влизайте в трейд, ако не разбирате логиката зад него.</li>
-<li>Преди да рискувате пари, уверете се че знаете защо го правите.</li>
+<li>Не се доверявайте безусловно на никого</li>
+<li>Telegram групи и сигнали могат да се използват само за <strong>потвърждение на вашия собствен анализ</strong></li>
+<li>Не влизайте в трейд, ако не разбирате логиката зад него</li>
+<li>Преди да рискувате пари, уверете се че знаете защо го правите</li>
 </ul>
+</section>
 
-<p>
-<strong>Ключовият урок:</strong>
-Научете се да разпознавате шума на пазара и ефекта на Hindsight Bias.
-В дългосрочен план това, което има значение, е
-<strong>дисциплина, стратегия и добро управление на риска (risk management)</strong>,
-а не това дали дадено движение изглежда очевидно след като вече се е случило.
-</p>
+<section>
+<h2>⚠️ Пазарът винаги има риск⚠️</h2>
+<p>Дори добре тествана стратегия може да доведе до губещи сделки.</p>
+<blockquote>„Ако има стратегия → винаги печеля“</blockquote>
+<p>Но реалността е по-различна:</p>
+<blockquote><em>probability → печалба в дългосрочен план</em></blockquote>
+</section>
 
-</div>
+<section>
+<h2>⚠️ Дисциплина и Контрол ⚠️ </h2>
+<ul>
+<li>Рискуваш твърде много / Overleveraging</li>
+<li>Влизаш импулсивно / Impulsive entry</li>
+<li>Правиш <em>revenge trades</em> / Chasing losses</li>
+</ul>
+<p><strong>Успехът идва от дисциплина, стратегия и управление на риска.</strong></p>
+</section>
 
-<style>
-.trading-disclaimer-component {
-    max-width: 650px;
-    margin: 40px auto;
-    padding: 25px 30px;
-    border-radius: 10px;
-    border: 2px solid #00ff00;
-    background: #110011;
-    box-shadow: 0 0 25px #00ff00;
-    font-family: 'Courier New', monospace;
-    color: #00ff00;
-}
-
-.trading-disclaimer-component h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.trading-disclaimer-component p,
-.trading-disclaimer-component li {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.trading-disclaimer-component ul {
-    margin: 15px 0 15px 20px;
-}
-</style>
-
-<style>
-.hindsight-warning-component {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 25px 30px;
-    border-radius: 10px;
-    border: 2px solid #00ff00;
-    background: #110011;
-    box-shadow: 0 0 25px #00ff00;
-    font-family: 'Courier New', monospace;
-    color: #00ff00;
-}
-
-.hindsight-warning-component h2 {
-    text-align: center;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.hindsight-warning-component p,
-.hindsight-warning-component li {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.hindsight-warning-component ul {
-    margin-left: 20px;
-}
-</style>
-
-
-<!-- Risk Disclaimer Component -->
-<div class="risk-warning">
-  <h2>⚠️ Пазарът винаги има риск / The Market Always Carries Risk ⚠️</h2>
-  <p>Дори добре тествана стратегия може да доведе до губещи сделки.</p>
-  <p>Много хора мислят:</p>
-  <blockquote>„Ако има стратегия → винаги печеля“</blockquote>
-  <p>Но реалността е по-различна:</p>
-  <blockquote><em>probability → печалба в дългосрочен план</em></blockquote>
-</div>
-
-<style>
-.risk-warning {
-    background-color: #110011;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 600px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: left;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.risk-warning h2 {
-    font-size: 24px;
-    text-shadow: 0 0 10px #00ff00;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.risk-warning p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 10px 0;
-}
-
-.risk-warning blockquote {
-    font-style: italic;
-    margin: 10px 0 20px 20px;
-    color: #00ff88;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
-
-<!-- Trading Discipline Warning Component -->
-<div class="discipline-warning">
-  <h2>⚠️ Дисциплина и Контрол / Discipline & Control ⚠️</h2>
-  <p>Дори перфектен сетъп може да не даде резултат, ако:</p>
-  <ul>
-    <li>Рискуваш твърде много / Overleveraging</li>
-    <li>Влизаш импулсивно / Impulsive entry</li>
-    <li>Правиш <em>revenge trades</em> / Chasing losses</li>
-  </ul>
-  <p><strong>Успехът идва от дисциплина, стратегия и управление на риска.</strong></p>
-</div>
-
-<style>
-.discipline-warning {
-    background-color: #110011;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 600px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: left;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.discipline-warning h2 {
-    font-size: 24px;
-    text-shadow: 0 0 10px #00ff00;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.discipline-warning p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 10px 0;
-}
-
-.discipline-warning ul {
-    margin: 10px 0 20px 20px;
-}
-
-.discipline-warning li {
-    font-size: 16px;
-    margin: 8px 0;
-    color: #00ff88;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-.discipline-warning em {
-    font-style: italic;
-    color: #00ffcc;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
-
-<!-- Market Probability Warning Component -->
-<div class="market-warning">
-  <h2>⚠️ Нищо не предсказва пазара ⚠️</h2>
-  <ul>
-    <li>Не можем да предсказваме бъдещето</li>
-    <li>Работим с вероятности</li>
-  </ul>
-</div>
-
-<style>
-.market-warning {
-    background-color: #110011;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 600px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: left;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.market-warning h2 {
-    font-size: 24px;
-    text-shadow: 0 0 10px #00ff00;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.market-warning ul {
-    margin: 10px 0 20px 20px;
-}
-
-.market-warning li {
-    font-size: 16px;
-    margin: 8px 0;
-    color: #00ff88;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-.market-warning p {
-    font-size: 16px;
-    margin-top: 15px;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
-
-
-<div class="ny-header-component">
-    <h1>НЮ ЙОРК SWEEPS</h1>
-</div>
-
-<style>
-.ny-header-component {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.ny-header-component h1 {
-    font-family: 'Courier New', monospace;
-    font-size: 36px;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
-}
-</style>
-
-<div class="trading-session-table-component">
-
+<section>
+<h2>НЮ ЙОРК SWEEPS</h2>
 <table>
-<thead>
-<tr>
-<th>Session</th>
-<th>Час (BG)</th>
-<th>Какво ни трябва</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Asia</td>
-<td>00:00 – 09:00</td>
-<td>Asia High / Low</td>
-</tr>
-
-<tr>
-<td>London</td>
-<td>09:00 – 12:00</td>
-<td>London High / Low</td>
-</tr>
-
-<tr>
-<td>New York</td>
-<td>14:30 – 17:00</td>
-<td>Trade setup</td>
-</tr>
-
-</tbody>
+<tr><th>Session</th><th>Час (BG)</th><th>Какво ни трябва</th></tr>
+<tr><td>Asia</td><td>00:00 – 09:00</td><td>Asia High / Low</td></tr>
+<tr><td>London</td><td>09:00 – 12:00</td><td>London High / Low</td></tr>
+<tr><td>New York</td><td>14:30 – 17:00</td><td>Trade setup</td></tr>
 </table>
+</section>
 
-</div>
-
-<style>
-.trading-session-table-component {
-    width: 80%;
-    margin: 40px auto;
-}
-
-.trading-session-table-component table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Courier New', monospace;
-    color: #00ff00;
-    box-shadow: 0 0 20px #00ff00;
-}
-
-.trading-session-table-component th,
-.trading-session-table-component td {
-    border: 1px solid #00ff00;
-    padding: 12px 15px;
-}
-
-.trading-session-table-component th {
-    background: #003300;
-}
-
-.trading-session-table-component td {
-    background: #001100;
-}
-
-.trading-session-table-component tr:hover td {
-    background: #004400;
-}
-</style>
-
-<div class="ny-liquidity-event-component">
-
+<div class="liquidity-banner">
+<div class="scanline"></div>
 <h2>✨ New York за XAU/USD ✨</h2>
-
-<p>
-<strong>Време (българско):</strong>
-<span class="ny-liquidity-time">14:00 – 14:30</span>
-</p>
-
-<p>
-Тогава започва да влиза
-<span class="ny-liquidity-highlight">американската ликвидност</span>
-</p>
-
+<span class="liquidity-time">14:00 – 14:30</span>
+<p>Тогава започва да влиза <span class="highlight">американската ликвидност</span></p>
 </div>
 
-<style>
-.ny-liquidity-event-component {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 25px 30px;
-    border-radius: 8px;
-    border: 2px solid #00ff00;
-    background: #001100;
-    box-shadow: 0 0 15px #00ff00;
-    font-family: 'Courier New', monospace;
-    color: #00ff00;
-}
-
-.ny-liquidity-event-component h2 {
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.ny-liquidity-time {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.ny-liquidity-highlight {
-    font-weight: bold;
-}
-</style>
-
-<div class="gold-core-insight-component">
-
+<section>
 <h2>🟡 Основният извод</h2>
-
-<p>
-Пазарът на злато <strong>(XAU/USD)</strong> се движи по
-<strong>повторяеми модели всяка седмица</strong>.
-</p>
-
-<p>
-Стратегии като <strong>NY Sweep</strong>,
-<strong>Judas Swing</strong>
-или
-<strong>Liquidity Sweep</strong>
-описват едно и също явление с различни думи.
-</p>
-
+<p>Пазарът на злато <strong>(XAU/USD)</strong> се движи по <strong>повторяеми модели всяка седмица</strong>.</p>
+<p>Стратегии като <strong>NY Sweep</strong>, <strong>Judas Swing</strong> или <strong>Liquidity Sweep</strong> описват едно и също явление с различни думи.</p>
 <ul>
 <li>Има структура, която се повтаря</li>
 <li>Големите институции създават ликвидност</li>
 <li>След това използват тази ликвидност за големите движения</li>
 </ul>
+<p>Ако разбереш тази логика можеш да я превърнеш в <strong>свой трейдинг план</strong>.</p>
+</section>
 
-<p>
-Ако разбереш тази логика можеш да я превърнеш в
-<strong>свой трейдинг план</strong>.
-</p>
+<section>
+<h2>🔁 Сценариите, които се повтарят почти всеки ден</h2>
+<ul>
+<li>Sweep на <strong>London High</strong> → после връщане → SELL</li>
+<li>Sweep на <strong>London Low</strong> → после връщане → BUY</li>
+<li>Sweep на <strong>Asia High / Low</strong>, когато <strong>London High / Low</strong> е по-ниско → после голям тренд</li>
+<li><strong>Judas Swing / fake move</strong> → малки манипулации преди истинското движение</li>
+</ul>
+<p>💡 Виждаш ли как всички различни стратегии всъщност описват едно и също? Просто някои трейдъри казват „Judas Swing“, други „liquidity sweep“, а трети „NY breakout“.</p>
+</section>
 
-</div>
+<section>
+<h2>🟢 Какво можем да правим</h2>
+<ul>
+<li>Следим <strong>Asia High / Low</strong></li>
+<li>Следим <strong>London High / Low</strong></li>
+<li>В 14:30 – 15:30 бг време чакаме <strong>NY sweep</strong></li>
+<li>Влизаме само когато има активиран сетъп (връщане под/над нивото)</li>
+<li>Рискът трябва да е контролиран – <strong>stop loss &lt; 1-2% от баланса на акаунта</strong></li>
+<li>Печалбите → търсим 2:1 или 3:1, понякога 5:1, но с по-малка вероятност</li>
+</ul>
+</section>
 
-<style>
-.gold-core-insight-component {
-    max-width: 650px;
-    margin: 40px auto;
-    padding: 25px 30px;
-    border-radius: 10px;
-    border: 2px solid #00ff88;
-    background: #001100;
-    box-shadow: 0 0 25px #00ff88;
-    font-family: 'Courier New', monospace;
-    color: #00ff88;
-}
-
-.gold-core-insight-component h2 {
-    text-align: center;
-    text-shadow: 0 0 10px #00ff88;
-}
-
-.gold-core-insight-component p,
-.gold-core-insight-component li {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.gold-core-insight-component ul {
-    margin-left: 20px;
-}
-</style>
-
-
-<!-- Market Sessions Component -->
-<div class="sessions-warning">
-  <h2>🟢 Какво всъщност се случва</h2>
-  <ul>
-    <li><strong>Asia session:</strong> Пазарът се движи в range → определят се <em>Asia High / Asia Low</em> <br/>
-        <em>→ първият „магнит“ за ликвидност</em>
-    </li>
-    <li><strong>London session:</strong> Цената формира <em>London High / London Low</em> <br/>
-        <em>→ втори важен рейндж, често sweep-ва Asia нивата</em>
-    </li>
-    <li><strong>New York session (14:30 – 15:30 BG time):</strong> Голямото движение <br/>
-      <ul>
-        <li>Може да е sweep на <em>London High / Low</em></li>
-        <li>Може да е sweep на <em>Asia High / Low</em></li>
-        <li>Понякога има <em>Judas Swing</em>: fake move нагоре/надолу → истинският тренд</li>
-      </ul>
-      <em>→ След sweep-а идва силен тренд с най-големите печалби за деня</em>
-    </li>
-  </ul>
-</div>
-
-<style>
-.sessions-warning {
-    background-color: #110011;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 650px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: left;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.sessions-warning h2 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.sessions-warning ul {
-    margin: 10px 0 20px 20px;
-}
-
-.sessions-warning li {
-    font-size: 16px;
-    margin: 10px 0;
-    color: #00ff88;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-.sessions-warning li ul li {
-    color: #00ffcc;
-    margin: 6px 0 6px 20px;
-}
-
-.sessions-warning em {
-    font-style: italic;
-    color: #00ffcc;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
-
-
-<!-- Основни типове движения / Market Movement Types Component -->
-<div class="movement-types">
-  <h2>⚡ Основни типове движения</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Тип движение</th>
-        <th>Как изглежда</th>
-        <th>Цел / защо се случва</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Liquidity Sweep</td>
-        <td>Цената „подмята“ high / low</td>
-        <td>Събира стопове и поръчки за големите участници</td>
-      </tr>
-      <tr>
-        <td>Judas Swing</td>
-        <td>Fake move в обратна посока на рейнджа</td>
-        <td>Изплашва малките трейдъри → освобождава ликвидност</td>
-      </tr>
-      <tr>
-        <td>London / Asia Sweep</td>
-        <td>Цена пробива локален рейндж</td>
-        <td>Търси по-висока времева ликвидност (Asia High / Low)</td>
-      </tr>
-      <tr>
-        <td>Trend Move</td>
-        <td>Истинският тренд след sweep</td>
-        <td>Това е движението, което носи реалните пипсове</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<style>
-.movement-types {
-    background-color: #000000;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 750px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: center;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.movement-types h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.movement-types table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
-
-.movement-types th, .movement-types td {
-    border: 1px solid #00ff00;
-    padding: 10px 12px;
-}
-
-.movement-types th {
-    background-color: #003300;
-    font-size: 16px;
-}
-
-.movement-types td {
-    background-color: #001100;
-    font-size: 15px;
-}
-
-.movement-types tr:hover td {
-    background-color: #004400;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
-
-<!-- Сценариите, които се повтарят почти всеки ден / Repeating Daily Scenarios Component -->
-<div class="daily-scenarios">
-  <h2>🔁 Сценариите, които се повтарят почти всеки ден</h2>
-  <ul>
-    <li>Sweep на <strong>London High</strong> → после връщане → SELL</li>
-    <li>Sweep на <strong>London Low</strong> → после връщане → BUY</li>
-    <li>Sweep на <strong>Asia High / Low</strong>, когато <strong>London High / Low</strong> е по-ниско → после голям тренд</li>
-    <li><strong>Judas Swing / fake move</strong> → малки манипулации преди истинското движение</li>
-  </ul>
-  <p>💡 Виждаш ли как всички различни стратегии всъщност описват едно и също? Просто някои трейдъри казват „Judas Swing“, други „liquidity sweep“, а трети „NY breakout“.</p>
-</div>
-
-<style>
-.daily-scenarios {
-    background-color: #000000;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 700px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: left;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.daily-scenarios h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #00ff00;
-    text-align: center;
-}
-
-.daily-scenarios ul {
-    margin: 10px 0 20px 20px;
-}
-
-.daily-scenarios li {
-    font-size: 16px;
-    margin: 8px 0;
-    color: #00ff88;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-.daily-scenarios p {
-    font-size: 16px;
-    margin-top: 15px;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-.daily-scenarios strong {
-    color: #00ffcc;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
-
-
-<!-- Защо изглежда „очевидно“ след време / Hindsight Explanation Component -->
-<div class="hindsight-explanation">
-  <h2>🔹 Защо изглежда „очевидно“ след време</h2>
-  <p>Когато гледаш графиката в реално време, всичко е хаотично:</p>
-  <ul>
-    <li>малки фалшиви движения</li>
-    <li>шум на пазара</li>
-    <li>големи стопове на малките трейдъри</li>
-  </ul>
-  <p>Но след като денят приключи, графиката изглежда като повторение на сценарий:</p>
-  <ul>
-    <li><strong>sweep</strong> → връщане → голям тренд</li>
-  </ul>
-  <p>И точно тук идва магията: пазарът почти винаги прави едно и също, просто трябва да знаеш кога и къде да гледаш.</p>
-</div>
-
-<style>
-.hindsight-explanation {
-    background-color: #000000;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 700px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: left;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.hindsight-explanation h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.hindsight-explanation ul {
-    margin: 10px 0 20px 20px;
-}
-
-.hindsight-explanation li {
-    font-size: 16px;
-    margin: 6px 0;
-    color: #00ff88;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-.hindsight-explanation p {
-    font-size: 16px;
-    margin: 10px 0;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-.hindsight-explanation strong {
-    color: #00ffcc;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
-
-<!-- Какво можем да правим / Trading Actions Component -->
-<div class="trading-actions">
-  <h2>🟢 Какво можем да правим</h2>
-  <ul>
-    <li>Следим <strong>Asia High / Low</strong></li>
-    <li>Следим <strong>London High / Low</strong></li>
-    <li>В 14:30 – 15:30 бг време чакаме <strong>NY sweep</strong></li>
-    <li>Влизаме само когато има активиран сетъп (връщане под/над нивото)</li>
-    <li>Рискът трябва да е контролиран – <strong>stop loss &lt; 1-2% от баланса на акаунта</strong></li>
-    <li>Печалбите → търсим 2:1 или 3:1, понякога 5:1, но с по-малка вероятност</li>
-  </ul>
-</div>
-
-<style>
-.trading-actions {
-    background-color: #000000;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 700px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: left;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.trading-actions h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.trading-actions ul {
-    margin: 10px 0 20px 20px;
-}
-
-.trading-actions li {
-    font-size: 16px;
-    margin: 6px 0;
-    color: #00ff88;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-.trading-actions strong {
-    color: #00ffcc;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
-
-<!-- Ключовото осъзнаване / Key Realization Component -->
-<div class="key-realization">
-  <h2>🔑 Ключовото осъзнаване</h2>
-  <p>Пазарът е като машина, която се върти на едни и същи колела.</p>
-  <p>Ти просто чакаш точния момент, когато колелото се активира и имаш шанс да влезеш с максимален шанс за печалба.</p>
-</div>
-
-<style>
-.key-realization {
-    background-color: #000000;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    padding: 25px 30px;
-    max-width: 700px;
-    margin: 40px auto;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: left;
-    box-shadow: 0 0 25px #00ff00;
-    animation: glow 2s infinite alternate;
-}
-
-.key-realization h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.key-realization p {
-    font-size: 16px;
-    margin: 10px 0;
-    text-shadow: 0 0 3px #00ff00;
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00ff00; }
-    to { box-shadow: 0 0 25px #00ff00; }
-}
-</style>
+<section>
+<h2>🔑 Ключовото осъзнаване</h2>
+<p>Пазарът е като машина, която се върти на едни и същи колела.</p>
+<p>Ти просто чакаш точния момент, когато колелото се активира и имаш шанс да влезеш с максимален шанс за печалба.</p>
+</section>
 
 </body>
 </html>
